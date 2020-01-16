@@ -75,4 +75,7 @@ dependencies {
 
     //Circular image
     implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    //okHttp library
+    implementation "com.squareup.okhttp3:okhttp:3.0.0"
 }

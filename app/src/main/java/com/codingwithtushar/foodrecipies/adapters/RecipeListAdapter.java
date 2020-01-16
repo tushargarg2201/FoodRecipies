@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.codingwithtushar.foodrecipies.Models.recipes;
 import com.codingwithtushar.foodrecipies.R;
@@ -97,6 +98,8 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     private void bindRecipeView(RecyclerView.ViewHolder holder, int position) {
         RequestOptions requestOptions = new RequestOptions().placeholder(R.drawable.ic_launcher_background);
+        requestOptions = requestOptions.diskCacheStrategy(DiskCacheStrategy.ALL);
+
         Glide.with(holder.itemView.getContext())
                 .setDefaultRequestOptions(requestOptions)
                 .load(recipesList.get(position).getImage_url())
